@@ -4,26 +4,12 @@ import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
 import { ArrowRight, Clock, ExternalLink, Star, Users, Mic, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
-const featuredArticles = [
-  {
-    title: 'Zero Trust Architecture: A C-Suite Implementation Guide',
-    date: 'Jan 10, 2026',
-    readTime: '8 min read',
-    categories: ['Cloud Policy', 'Zero Trust'],
-  },
-  {
-    title: 'AI Ethics in Enterprise Security: Navigating the 2026 Landscape',
-    date: 'Jan 5, 2026',
-    readTime: '12 min read',
-    categories: ['AI Ethics', 'Governance'],
-  },
-];
+import { getFeaturedArticles } from '@/data/articles';
 
 const featuredProjects = [
-  { name: 'zero-trust-blueprint', language: 'Python', stars: 234 },
-  { name: 'iam-analyzer', language: 'Python', stars: 312 },
-  { name: 'secrets-scanner', language: 'Go', stars: 421 },
+  { name: 'security-culture-toolkit', language: 'Python', stars: 234 },
+  { name: 'positive-security-metrics', language: 'Python', stars: 312 },
+  { name: 'executive-risk-dashboard', language: 'TypeScript', stars: 421 },
 ];
 
 const languageColors: Record<string, string> = {
@@ -33,6 +19,8 @@ const languageColors: Record<string, string> = {
 };
 
 const Index = () => {
+  const featuredArticles = getFeaturedArticles();
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
@@ -55,9 +43,9 @@ const Index = () => {
             </div>
 
             <div className="grid md:grid-cols-2 gap-6 mb-8">
-              {featuredArticles.map((article, index) => (
+              {featuredArticles.slice(0, 2).map((article) => (
                 <article
-                  key={index}
+                  key={article.id}
                   className="group card-elevated p-6 hover:border-primary/30 transition-all duration-300 cursor-pointer"
                 >
                   <div className="flex flex-wrap gap-2 mb-4">
@@ -70,6 +58,9 @@ const Index = () => {
                   <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">
                     {article.title}
                   </h3>
+                  <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+                    {article.excerpt}
+                  </p>
                   <div className="flex items-center justify-between text-xs text-muted-foreground">
                     <span>{article.date}</span>
                     <div className="flex items-center gap-1">
@@ -140,15 +131,15 @@ const Index = () => {
                 Accelerate Your Journey
               </h2>
               <p className="text-muted-foreground">
-                Tailored guidance for security professionals at every stage of their career.
+                Tailored guidance for security leaders who want to drive positive change in their organizations.
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
               {[
-                { icon: Users, title: '1:1 Mentoring', desc: 'Career growth & leadership' },
+                { icon: Users, title: '1:1 Mentoring', desc: 'Strategic leadership coaching' },
                 { icon: Mic, title: 'Speaking', desc: 'Keynotes & workshops' },
-                { icon: Calendar, title: 'Advisory', desc: 'Strategic counsel' },
+                { icon: Calendar, title: 'Advisory', desc: 'Executive counsel' },
               ].map((item, index) => (
                 <div key={index} className="text-center">
                   <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mx-auto mb-4">

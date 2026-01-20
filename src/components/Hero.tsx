@@ -1,5 +1,6 @@
-import { ArrowRight, MapPin } from 'lucide-react';
+import { ArrowRight, MapPin, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import DataFlowBackground from './DataFlowBackground';
 
 const Hero = () => {
@@ -21,28 +22,33 @@ const Hero = () => {
           {/* Left: Text Content */}
           <div className="space-y-8 animate-fade-in">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-sm text-primary font-medium">Architectural Lead</span>
+              <Sparkles className="w-4 h-4 text-primary" />
+              <span className="text-sm text-primary font-medium">Security Strategy Leader</span>
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              Scaling Security Architecture for{' '}
-              <span className="text-gradient">Global Enterprises</span>
+              Security as an{' '}
+              <span className="text-gradient">Enabler</span>,{' '}
+              Not a Barrier
             </h1>
             
             <p className="text-lg text-muted-foreground max-w-xl">
-              Building resilient, compliant, and scalable security frameworks for 
-              Fortune 500 companies across UKI and Europe. Where strategy meets execution.
+              Transforming how organizations think about security. Positive, strategic, 
+              and business-aligned approaches that build trust and drive growth.
             </p>
             
             <div className="flex flex-wrap gap-4">
-              <Button variant="hero" size="lg">
-                Explore Insights
-                <ArrowRight className="w-5 h-5" />
-              </Button>
-              <Button variant="outline" size="lg">
-                View Projects
-              </Button>
+              <Link to="/boardroom">
+                <Button variant="hero" size="lg">
+                  Explore Insights
+                  <ArrowRight className="w-5 h-5" />
+                </Button>
+              </Link>
+              <Link to="/laboratory">
+                <Button variant="outline" size="lg">
+                  View Projects
+                </Button>
+              </Link>
             </div>
             
             {/* Stats */}
@@ -70,9 +76,10 @@ const Hero = () => {
               <div className="absolute inset-2 rounded-xl bg-card border border-border flex items-center justify-center overflow-hidden">
                 <div className="text-center p-8">
                   <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
-                    <span className="text-4xl font-bold text-primary">SA</span>
+                    <Sparkles className="w-10 h-10 text-primary" />
                   </div>
-                  <p className="text-muted-foreground text-sm">Security Architect</p>
+                  <p className="text-lg font-semibold text-primary">The Security Positivist</p>
+                  <p className="text-muted-foreground text-sm mt-1">Strategy • Leadership • Growth</p>
                 </div>
               </div>
             </div>
@@ -120,15 +127,15 @@ const Hero = () => {
               Latest Insights
             </span>
             <div className="flex gap-8 animate-slide-in">
-              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap">
-                Zero Trust Architecture: 2026 Enterprise Guide →
-              </a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap">
-                AWS AI Practitioner Certification Journey →
-              </a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap">
-                Cloud Policy Frameworks for Regulated Industries →
-              </a>
+              <Link to="/boardroom" className="text-sm text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap">
+                Reframing Risk: Why Positive Security Messaging Wins →
+              </Link>
+              <Link to="/boardroom" className="text-sm text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap">
+                Strategic Security Planning for Executive Alignment →
+              </Link>
+              <Link to="/boardroom" className="text-sm text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap">
+                Building Security Champions Across Your Organization →
+              </Link>
             </div>
           </div>
         </div>

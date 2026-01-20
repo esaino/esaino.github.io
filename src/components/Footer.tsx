@@ -1,4 +1,5 @@
-import { Shield, Linkedin, Twitter, Github } from 'lucide-react';
+import { Sparkles, Linkedin, Github } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,8 +11,7 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Twitter, href: '#', label: 'X (Twitter)' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/estebanhernandez/', label: 'LinkedIn' },
     { icon: Github, href: '#', label: 'GitHub' },
   ];
 
@@ -21,15 +21,15 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 items-start">
           {/* Brand */}
           <div className="space-y-4">
-            <a href="#" className="flex items-center gap-2 group">
+            <Link to="/" className="flex items-center gap-2 group">
               <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center border border-primary/30">
-                <Shield className="w-5 h-5 text-primary" />
+                <Sparkles className="w-5 h-5 text-primary" />
               </div>
-              <span className="font-semibold text-lg">SecArch</span>
-            </a>
+              <span className="font-semibold text-lg">The Security Positivist</span>
+            </Link>
             <p className="text-sm text-muted-foreground max-w-xs">
-              Enterprise Security Architecture Leadership. 
-              Building resilient futures for global organizations.
+              Reframing security as a business enabler. 
+              Positive strategies for resilient organizations.
             </p>
           </div>
 
@@ -66,7 +66,7 @@ const Footer = () => {
               ))}
             </div>
             <p className="text-sm text-muted-foreground">
-              hello@secarch.dev
+              hello@securitypositivist.com
             </p>
           </div>
         </div>
@@ -74,7 +74,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-xs text-muted-foreground">
-            © {currentYear} Security Architect. All rights reserved.
+            © {currentYear} The Security Positivist. All rights reserved.
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
